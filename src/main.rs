@@ -8,8 +8,12 @@ fn main() {
     let mut args: Vec<String> = env::args().collect(); 
     let mut msg: String = String::from("y");
     if args.len() > 1 {
-        args.remove(0); // don't need the command itself.
-        for i in 0..args.len() { // paruse the items, probably could just use an iter here, but old habbits and have old nuns.
+        // don't need the first one, 
+        // yes I realize I should use .skip()
+        args.remove(0); 
+        // paruse the items, probably could just use an iter here 
+        // but old habbits and have old nuns.
+        for i in 0..args.len() { 
             // this should probably be a match statement
             if args[i].eq("-h") || args[i].eq("--help") {
                 println!("yrs: rust version of 'yes'");
@@ -27,7 +31,7 @@ fn main() {
     }
     loop { 
     // loop until the heat death of the universe 
-    // or until the heat death of this poor rock we tricked into counting...
+    // or of this poor rock, we've tricked into counting...
         println!("{msg}");
     }
 } 
